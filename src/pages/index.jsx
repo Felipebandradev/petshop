@@ -6,7 +6,7 @@ export default function Home() {
       <Head>
         <title>Petshop 2024</title>
         <meta name="description" content="Petshop sem igual leia o maioral" />
-        <meta name="keywords" content="Notícias, petshop, pet Notícias..." />
+        <meta name="keywords" content="Notícias, petshop, pet Notícias, gato, cachorro, dinossauro..." />
       </Head>
       <section>
         <h2>Pet Notícias</h2>
