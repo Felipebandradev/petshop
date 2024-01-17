@@ -9,6 +9,10 @@ export default function Produtos() {
           name="description"
           content="Veja os melhores produtos pro seu pet até se for um T-rex"
         />
+        <meta
+          name="keywords"
+          content="Ração, Brinquedos, Banho, Tosa, coleira..."
+        />
       </Head>
       <section>
         <h2>Conheça nossos Produtos </h2>
