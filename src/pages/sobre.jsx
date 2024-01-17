@@ -4,7 +4,7 @@ export default function Sobre() {
   return (
     <>
       <Head>
-        <title>Sobre - Petshop</title>
+        <title>Sobre - Petshop 2024</title>
         <meta name="description" content="Nos conheça Melhor" />
       </Head>
       <section>

@@ -4,7 +4,7 @@ export default function Contato() {
   return (
     <>
       <Head>
-        <title>Contato - Petshop</title>
+        <title>Contato - Petshop 2024</title>
         <meta name="description" content="Fale conosco sobre o petshop.." />
       </Head>
       <section>
