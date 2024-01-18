@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 
 const StyledNav = styled.nav`
@@ -22,7 +23,8 @@ const StyledNav = styled.nav`
       border-bottom-right-radius: var(--borda-arredondada);
     }
 
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
       background-color: var(--cor-primaria-fundo-hover);
     }
 
@@ -31,19 +33,29 @@ const StyledNav = styled.nav`
       padding-right: 2rem;
     }
 
+    &.ativo {
+      background-color: #453c63;
+    }
   }
-
-
-
 `;
 
 export default function Menu() {
+  const nomePag = usePathname();
+
   return (
     <StyledNav>
-      <Link href="/"> Blog </Link>
-      <Link href="/produtos"> Produtos </Link>
-      <Link href="/sobre"> Sobre </Link>
-      <Link href="/contato"> Contato </Link>
+      <Link className={nomePag === "/" ? "ativo" : ""} href="/">
+        Blog
+      </Link>
+      <Link className={nomePag === "/produtos" ? "ativo" : ""} href="/produtos">
+        Produtos
+      </Link>
+      <Link className={nomePag === "/sobre" ? "ativo" : ""} href="/sobre">
+        Sobre
+      </Link>
+      <Link className={nomePag === "/contato" ? "ativo" : ""} href="/contato">
+        Contato
+      </Link>
     </StyledNav>
   );
 }
