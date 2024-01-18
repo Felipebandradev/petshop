@@ -12,6 +12,15 @@ const StyledNav = styled.nav`
     background-color: var(--cor-primaria-fundo);
     color: var(--cor-primaria);
     padding: 0.8rem 1rem;
+
+    &:first-child {
+      border-top-left-radius: var(--borda-arredondada);
+      border-bottom-left-radius: var(--borda-arredondada);
+    }
+    &:last-child {
+      border-top-right-radius: var(--borda-arredondada);
+      border-bottom-right-radius: var(--borda-arredondada);
+    }
   }
 `;
 
