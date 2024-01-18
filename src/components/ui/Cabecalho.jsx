@@ -18,25 +18,27 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.5rem;
   }
 `;
 
 export default function Cabecalho() {
   return (
     <StyledHeader>
-      <h1>
-        <Link href="/">
-          <Image
-            src="/images/logo.png"
-            width={48}
-            height={48}
-            alt="Pata dentro de um coração"
-          />
-          PetShop
-        </Link>
-      </h1>
-      <Menu />
+      <div className="limitador">
+        <h1>
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              width={48}
+              height={48}
+              alt="Pata dentro de um coração"
+            />
+            PetShop
+          </Link>
+        </h1>
+        <Menu />
+      </div>
     </StyledHeader>
   );
 }
