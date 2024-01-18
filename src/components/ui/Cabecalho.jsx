@@ -19,7 +19,26 @@ const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+
+    &:hover,
+    &:focus {
+      color: var(--cor-secundaria-hover);
+    }
   }
+
+  img {
+    margin-right: 0.5rem;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+
+  
 `;
 
 export default function Cabecalho() {
