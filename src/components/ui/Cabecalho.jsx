@@ -4,6 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
+  /* Mobile First */
   background-color: #f7f7f7;
   box-shadow: var(--sombra-box);
 
