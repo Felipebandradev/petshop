@@ -26,7 +26,15 @@ const StyledNav = styled.nav`
       background-color: var(--cor-primaria-fundo-hover);
     }
 
+    @media screen and (min-width: 700px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
   }
+
+
+
 `;
 
 export default function Menu() {
