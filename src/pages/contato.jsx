@@ -45,7 +45,7 @@ export default function Contato() {
         <meta name="description" content="Fale conosco sobre o petshop.." />
       </Head>
       <StyledContato>
-        <h2>Fale conosco</h2>
+        <h2> Fale conosco </h2>
 
         <Container>
           <form action="" method="post">
