@@ -6,6 +6,26 @@ const StyledProdutos = styled.section`
   h2::before {
     content: "🎁 ";
   }
+
+  article{
+    padding: 1rem;
+  }
+
+  h3::before{
+    content: "🛒 ";
+  }
+
+  @media screen and (min-width: 800px) {
+    /* Esta div é o Styled Container, mas com uma formatação que
+    só vale para esta página Produtos */
+    div{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+  }
+ 
 `;
 
 export default function Produtos() {
