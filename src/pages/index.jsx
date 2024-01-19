@@ -31,6 +31,16 @@ const StyledListasPosts = styled.div`
       }
     }
   }
+
+  @media screen  and (min-width: 500px){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    article{
+      width: 49%;
+    }
+  }
 `;
 
 export default function Home() {
@@ -48,6 +58,20 @@ export default function Home() {
         <h2>Pet Notícias</h2>
 
         <StyledListasPosts>
+          <article>
+            <Link href="">
+              <h3>Titulo post...</h3>
+              <p>Subtítulo do post</p>
+            </Link>
+          </article>
+
+          <article>
+            <Link href="">
+              <h3>Titulo post...</h3>
+              <p>Subtítulo do post</p>
+            </Link>
+          </article>
+
           <article>
             <Link href="">
               <h3>Titulo post...</h3>
