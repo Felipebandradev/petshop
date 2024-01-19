@@ -1,6 +1,8 @@
+import Posts from "@/components/Posts";
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
+import arrayPosts from "./api/array-posts";
 
 const StyledHome = styled.section`
   h2::before {
@@ -22,22 +24,23 @@ const StyledListasPosts = styled.div`
       transform: scale(1.05);
     }
 
-    & a{
+    & a {
       text-decoration: none;
       color: black;
 
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         color: #7575d3;
       }
     }
   }
 
-  @media screen  and (min-width: 500px){
+  @media screen and (min-width: 500px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap:wrap;
-    article{
+    flex-wrap: wrap;
+    article {
       width: 49%;
     }
   }
@@ -56,35 +59,10 @@ export default function Home() {
       </Head>
       <StyledHome>
         <h2>Pet Notícias</h2>
-
         <StyledListasPosts>
-          <article>
-            <Link href="">
-              <h3>Titulo post...</h3>
-              <p>Subtítulo do post</p>
-            </Link>
-          </article>
-
-          <article>
-            <Link href="">
-              <h3>Titulo post...</h3>
-              <p>Subtítulo do post</p>
-            </Link>
-          </article>
-
-          <article>
-            <Link href="">
-              <h3>Titulo post...</h3>
-              <p>Subtítulo do post</p>
-            </Link>
-          </article>
-
-          <article>
-            <Link href="">
-              <h3>Titulo post...</h3>
-              <p>Subtítulo do post</p>
-            </Link>
-          </article>
+          {arrayPosts.map((array) => (
+            <Posts posts={array} key={array.id} />
+          ))}
         </StyledListasPosts>
       </StyledHome>
     </>
