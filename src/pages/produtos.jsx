@@ -1,3 +1,4 @@
+import Container from "@/components/ui/Container";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -24,35 +25,37 @@ export default function Produtos() {
       <StyledProdutos>
         <h2>Conheça nossos Produtos </h2>
 
-        <article>
-          <h3>Banho e Tosa</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            doloremque? Eum, fuga. Vel in sed ex vero id molestiae deserunt ea,
-            minus incidunt itaque nostrum accusamus dolores commodi dolore
-            debitis.
-          </p>
-        </article>
+        <Container>
+          <article>
+            <h3>Banho e Tosa</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+              doloremque? Eum, fuga. Vel in sed ex vero id molestiae deserunt
+              ea, minus incidunt itaque nostrum accusamus dolores commodi dolore
+              debitis.
+            </p>
+          </article>
 
-        <article>
-          <h3>Ração</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            doloremque? Eum, fuga. Vel in sed ex vero id molestiae deserunt ea,
-            minus incidunt itaque nostrum accusamus dolores commodi dolore
-            debitis.
-          </p>
-        </article>
+          <article>
+            <h3>Ração</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+              doloremque? Eum, fuga. Vel in sed ex vero id molestiae deserunt
+              ea, minus incidunt itaque nostrum accusamus dolores commodi dolore
+              debitis.
+            </p>
+          </article>
 
-        <article>
-          <h3>Coleira</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            doloremque? Eum, fuga. Vel in sed ex vero id molestiae deserunt ea,
-            minus incidunt itaque nostrum accusamus dolores commodi dolore
-            debitis.
-          </p>
-        </article>
+          <article>
+            <h3>Coleira</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+              doloremque? Eum, fuga. Vel in sed ex vero id molestiae deserunt
+              ea, minus incidunt itaque nostrum accusamus dolores commodi dolore
+              debitis.
+            </p>
+          </article>
+        </Container>
       </StyledProdutos>
     </>
   );
