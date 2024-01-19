@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export default function Posts({ posts }) {
+export default function Posts({ id, titulo, subtitulo }) {
   return (
     <article>
-      <Link href={`/post/${posts.id}`}>
-        <h3>{posts.titulo}</h3>
-        <p>{posts.subtitulo}</p>
+      <Link href={`/post/${id}`}>
+        <h3>{titulo}</h3>
+        <p>{subtitulo}</p>
       </Link>
     </article>
   );

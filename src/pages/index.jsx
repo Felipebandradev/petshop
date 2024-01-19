@@ -61,7 +61,12 @@ export default function Home() {
         <h2>Pet Notícias</h2>
         <StyledListasPosts>
           {arrayPosts.map((array) => (
-            <Posts posts={array} key={array.id} />
+            <Posts
+              id={array.id}
+              titulo={array.titulo}
+              subtitulo={array.subtitulo}
+              key={array.id}
+            />
           ))}
         </StyledListasPosts>
       </StyledHome>
