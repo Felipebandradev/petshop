@@ -35,3 +35,5 @@ const arrayPosts = [
     categoria: "comportamento",
   },
 ];
+
+export default arrayPosts;
