@@ -37,15 +37,15 @@ const StyledListasPosts = styled.div`
   }
 `;
 
-export default function ListaPosts({ array }) {
+export default function ListaPosts({ listaP }) {
   /* Se não houver posts(ou seja, posts está vazio/zerado),
   em vez de retornar artigos com o map, retorna uma menssagem provisória para o usuário */
-  if (array.length === 0)
+  if (listaP.length === 0)
     return <h3 style={{ textAlign: "center" }}>Ainda não há posts!</h3>;
 
   return (
     <StyledListasPosts>
-      {array.map(({ id, titulo, subtitulo }) => {
+      {listaP.map(({ id, titulo, subtitulo }) => {
         return (
           <article key={id}>
             <Link href={`/post/${id}`}>

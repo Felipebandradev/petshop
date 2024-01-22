@@ -1,5 +1,6 @@
 import ListaPosts from "@/components/ListaPosts";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledHome = styled.section`
@@ -9,6 +10,23 @@ const StyledHome = styled.section`
 `;
 
 export default function Home() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const CarrergarListaPosts = async () => {
+      try {
+        const resposta = await fetch(`http://10.20.46.35:2112/posts`);
+        const dados = await resposta.json();
+        setPosts(dados);
+        console.log(dados);
+      } catch (error) {
+        console.error("Houve um error: " + error);
+      }
+    };
+
+    CarrergarListaPosts();
+  }, []);
+
   return (
     <>
       <Head>
@@ -21,11 +39,8 @@ export default function Home() {
       </Head>
       <StyledHome>
         <h2>Pet Notícias</h2>
-        <ListaPosts
-          array={[{ id: 1, titulo: "dogTeste", subtitulo: "teste" }]}
-        />
+        <ListaPosts listaP={posts} />
       </StyledHome>
     </>
   );
 }
- 
