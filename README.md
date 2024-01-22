@@ -1,5 +1,18 @@
 # PetShop: Projeto Next.js
 
+## 11-usando-json-server-como-fake-api
+
+- para instalar o json-server: 
+```cmd
+<!-- para instalar globalmente para projetos futuros a versão deste projeto 1.0.0 alpha.21 -->
+npm install -g json-server
+```
+
+- para executar recomendado o node: 
+```cmd
+json-server --watch nomeDoArquivoDesejado <!-- neste caso db.json -->
+```
+
 ## Branch 10-desafio-transformar-lista-de-posts-em-componente
 
 - Crie na pasta `components` um componente chamado `ListaPosts`
