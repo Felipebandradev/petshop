@@ -19,6 +19,13 @@ export default function Home() {
     const CarrergarListaPosts = async () => {
       try {
         const resposta = await fetch(`http://10.20.46.35:2112/posts`);
+
+        if (!resposta.ok) {
+          throw new Error(
+            `Erro requisição: ${resposta.status} - ${resposta.statusText}`
+          );
+        }
+
         const dados = await resposta.json();
         setPosts(dados);
         console.log(dados);
