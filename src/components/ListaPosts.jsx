@@ -40,7 +40,7 @@ const StyledListasPosts = styled.div`
 export default function ListaPosts({ array }) {
   return (
     <StyledListasPosts>
-      {array.map(({id, titulo, subtitulo}) => {
+      {array.map(({ id, titulo, subtitulo }) => {
         return (
           <article>
             <Link href={`/post/${id}`}>
