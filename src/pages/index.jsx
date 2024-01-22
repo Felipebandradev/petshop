@@ -1,7 +1,6 @@
 import ListaPosts from "@/components/ListaPosts";
 import Head from "next/head";
 import styled from "styled-components";
-import arrayPosts from "./api/array-posts";
 
 const StyledHome = styled.section`
   h2::before {
@@ -22,7 +21,9 @@ export default function Home() {
       </Head>
       <StyledHome>
         <h2>Pet Notícias</h2>
-        <ListaPosts array={arrayPosts} />
+        <ListaPosts
+          array={[{ id: 1, titulo: "dogTeste", subtitulo: "teste" }]}
+        />
       </StyledHome>
     </>
   );
