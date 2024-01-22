@@ -1,4 +1,5 @@
 import ListaPosts from "@/components/ListaPosts";
+import Loading from "@/components/Loading";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -12,6 +13,8 @@ const StyledHome = styled.section`
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const CarrergarListaPosts = async () => {
       try {
@@ -19,6 +22,7 @@ export default function Home() {
         const dados = await resposta.json();
         setPosts(dados);
         console.log(dados);
+        setLoading(false);
       } catch (error) {
         console.error("Houve um error: " + error);
       }
@@ -39,7 +43,8 @@ export default function Home() {
       </Head>
       <StyledHome>
         <h2>Pet Notícias</h2>
-        <ListaPosts listaP={posts} />
+
+        {loading ? <Loading /> : <ListaPosts noticia={posts} />}
       </StyledHome>
     </>
   );
