@@ -12,6 +12,19 @@ npm install -g json-server
 ```cmd
 json-server --watch nomeDoArquivoDesejado <!-- neste caso db.json -->
 ```
+- para desconfigurar da porta padrão:
+```cmd
+<!-- use o ipconfig -->
+json-server --host ipDaMaquina nomeDoArquivoDesejado  --port numeroDaPorta
+```
+para facilitar a vida no package.json e crie um script novo e coloque o a linha de comando acima 
+
+```json
+"scripts": {
+    "api": "json-server --host ipDaMaquina nomeDoArquivoDesejado  --port numeroDaPorta"
+  }
+```
+
 
 ## Branch 10-desafio-transformar-lista-de-posts-em-componente
 
