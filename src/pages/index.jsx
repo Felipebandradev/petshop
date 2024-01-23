@@ -1,7 +1,6 @@
 import ListaPosts from "@/components/ListaPosts";
-import Loading from "@/components/Loading";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const StyledHome = styled.section`
@@ -10,33 +9,28 @@ const StyledHome = styled.section`
   }
 `;
 
-export default function Home() {
-  const [posts, setPosts] = useState([]);
+/* Executada No Servidor/Back-End */
+export async function getStaticProps() {
+  try {
+    const resposta = await fetch(`http://10.20.46.35:2112/posts`);
+    const dados = await resposta.json();
 
-  const [loading, setLoading] = useState(true);
+    if (!resposta.ok) {
+      throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
+    }
 
-  useEffect(() => {
-    const CarrergarListaPosts = async () => {
-      try {
-        const resposta = await fetch(`http://10.20.46.35:2112/posts`);
-
-        if (!resposta.ok) {
-          throw new Error(
-            `Erro requisição: ${resposta.status} - ${resposta.statusText}`
-          );
-        }
-
-        const dados = await resposta.json();
-        setPosts(dados);
-        console.log(dados);
-        setLoading(false);
-      } catch (error) {
-        console.error("Houve um error: " + error);
-      }
+    return {
+      props: {
+        posts: dados,
+      },
     };
+  } catch (error) {
+    console.error("Deu ruim: " + error.message);
+  }
+}
 
-    CarrergarListaPosts();
-  }, []);
+export default function Home({ posts }) {
+  const [Listaposts, setListaPosts] = useState(posts);
 
   return (
     <>
@@ -51,7 +45,7 @@ export default function Home() {
       <StyledHome>
         <h2>Pet Notícias</h2>
 
-        {loading ? <Loading /> : <ListaPosts noticia={posts} />}
+        <ListaPosts noticia={Listaposts} />
       </StyledHome>
     </>
   );

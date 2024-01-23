@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import Loading from "./Loading";
 
 const StyledListasPosts = styled.div`
   article {
@@ -40,8 +41,7 @@ const StyledListasPosts = styled.div`
 export default function ListaPosts({ noticia }) {
   /* Se não houver posts(ou seja, posts está vazio/zerado),
   em vez de retornar artigos com o map, retorna uma menssagem provisória para o usuário */
-  if (noticia.length === 0)
-    return <h3 style={{ textAlign: "center" }}>Ainda não há posts!</h3>;
+  if (noticia.length === 0) return <Loading />;
 
   return (
     <StyledListasPosts>
