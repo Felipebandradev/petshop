@@ -1,5 +1,17 @@
 # PetShop: Projeto Next.js
 
+### Documentação oficial sobre SSR:
+https://nextjs.org/docs/pages/building-your-application/data-fetching
+
+### Resumo sobre as funções 
+`getStaticProps`: executada no lado do servidor (SSR - Server Side Rendering), portanto logs, erros, lógica, ação/comandos NÃO aparecem para o usuário (mas aparecem no terminal para o programador(a)).
+
+Na maioria dos casos usaremos `getStaticProps` para este tipo de processamento em que os dados são consumidos (Data Fetching) através da uma API, que já que esta função tem uma perfomance melhor para fazer o processamento apenas no momento da requisição.
+
+Também há a função `getServerSideProps` que pode ser útil para páginas cujos dados mudam frequentemente ou são diferentes para cada usuário (como no caso de uso de dados de geolocalização).
+
+
+
 ## 12-desafio-consumindo-dados-usando-modo-React
 
 ### Orientações gerais
