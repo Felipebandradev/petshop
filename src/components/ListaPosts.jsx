@@ -48,7 +48,7 @@ export default function ListaPosts({ noticia }) {
       {noticia.map(({ id, titulo, subtitulo }) => {
         return (
           <article key={id}>
-            <Link href={`/post/${id}`}>
+            <Link href={`/posts/${id}`}>
               <h3>{titulo}</h3>
               <p>{subtitulo}</p>
             </Link>
