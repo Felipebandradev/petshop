@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import Head from "next/head";
 import styled from "styled-components";
 import serverApi from "../api/server";
+import { useState } from "react";
 
 const StyledPost = styled.article`
   h2::before {
@@ -37,19 +38,19 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post() {
+export default function Post({ post }) {
   return (
     <>
       <Head>
-        <title>Titulo do Post.... - PetShop 2024</title>
-        <meta name="description" content="Descrição do post..." />
+        <title> {post.titulo} - PetShop 2024</title>
+        <meta name="description" content={`${post.descricao}`} />
       </Head>
       <StyledPost>
-        <h2>Título do Post</h2>
+        <h2> {post.titulo} </h2>
 
         <Container>
-          <h3>Categoria...</h3>
-          <p>Descrição do post...</p>
+          <h3>{post.categoria}</h3>
+          <p>{post.descricao}</p>
         </Container>
       </StyledPost>
     </>
