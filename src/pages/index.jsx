@@ -2,6 +2,7 @@ import ListaPosts from "@/components/ListaPosts";
 import Head from "next/head";
 import { useState } from "react";
 import styled from "styled-components";
+import serverApi from "./api/server";
 
 const StyledHome = styled.section`
   h2::before {
@@ -16,7 +17,7 @@ com o objetivo de gerar props com os dados processados.
  */
 export async function getStaticProps() {
   try {
-    const resposta = await fetch(`http://10.20.46.35:2112/posts`);
+    const resposta = await fetch(`${serverApi}/posts`);
     const dados = await resposta.json();
 
     if (!resposta.ok) {
