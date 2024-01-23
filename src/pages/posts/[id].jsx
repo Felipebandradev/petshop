@@ -3,6 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import serverApi from "../api/server";
 import { useState } from "react";
+import Link from "next/link";
 
 const StyledPost = styled.article`
   h2::before {
@@ -39,10 +40,12 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ post }) {
+  const tituloPag = `${post.titulo} - PetShop 2024`;
+
   return (
     <>
       <Head>
-        <title> {post.titulo} - PetShop 2024</title>
+        <title>{tituloPag}</title>
         <meta name="description" content={`${post.descricao}`} />
       </Head>
       <StyledPost>
@@ -51,6 +54,7 @@ export default function Post({ post }) {
         <Container>
           <h3>{post.categoria}</h3>
           <p>{post.descricao}</p>
+          <Link href={`/`}>Voltar</Link>
         </Container>
       </StyledPost>
     </>
