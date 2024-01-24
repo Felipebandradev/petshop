@@ -23,6 +23,7 @@ const StyledPost = styled.article`
 `;
 
 export async function getStaticProps({ params }) {
+  /* Utilizamos a prop params do getStaticProps para poder ter acesso aos parâmetros dinâmicos da rota configurada nos links da lista de posts. Usamos a desestruturação parar obter de forma direta o parâmetro chamado "id" */
   const { id } = params;
 
   try {
@@ -40,15 +41,22 @@ export async function getStaticProps({ params }) {
     };
   } catch (error) {
     console.error("Deu ruim: " + error.message);
+    /* Esse return  notFound: true  é para retorna o erro 404 da pagina404.jsx. Precisa fazer, pois os dados são dinamicos   */
+    return {
+      notFound: true,
+    };
     return {
       notFound: true,
     };
   }
 }
-
+/* getStaticPaths é obrigatória quando se trata de tranalhar com páginas/rotas dinâmicas, ou seja, que dependem de parâmetros para serem construídas. */
 export async function getStaticPaths() {
   return {
+    /* paths fica vazio pois todos os caminhos devem ser gerados sob demanda, ou seja, no momento em que a página for aberta */
     paths: [],
+
+    /* fallback fica como "blocking" para garantir que a página somente será renderizada após a conclusão da geração dos caminhos e dos dados estáticos */
     fallback: "blocking",
   };
 }
