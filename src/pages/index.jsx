@@ -90,8 +90,14 @@ export default function Home({ posts, categorias }) {
     });
 
     setListaPosts(postsFiltrados);
+    setFiltroAtivo(true);
     
   };
+
+  const limparFiltro = ()=> {
+    setListaPosts(posts);
+    setFiltroAtivo(false);
+  }
 
   return (
     <>
@@ -115,7 +121,7 @@ export default function Home({ posts, categorias }) {
             );
           })}
           { filtroAtivo &&
-          <button className="limpar">Limpar Filtro</button>}
+          <button onClick={limparFiltro} className="limpar">Limpar Filtro</button>}
         </StyledCategorias>
 
         <ListaPosts noticia={Listaposts} />
