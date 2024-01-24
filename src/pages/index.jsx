@@ -70,6 +70,12 @@ export default function Home({ posts, categorias }) {
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
     console.log(categoriaEscolhida);
+
+    const postsFiltrados = posts.filter((post) => {
+      return post.categoria === categoriaEscolhida;
+    });
+
+    setListaPosts(postsFiltrados);
   };
 
   return (
