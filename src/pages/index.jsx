@@ -14,9 +14,9 @@ const StyledCategorias = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   margin: var(--borda-arredondada) 1rem;
-  
+
   button {
     text-transform: capitalize;
     margin: var(--borda-arredondada);
@@ -32,6 +32,18 @@ const StyledCategorias = styled.div`
 
     &:hover {
       background-color: #bb9df2;
+    }
+  }
+
+  .limpar {
+    background-color: #5a38d9;
+
+    &:hover {
+      background-color: #6944e7;
+    }
+
+    &::before {
+      content: "🧹 ";
     }
   }
 `;
@@ -67,6 +79,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts, categorias }) {
   const [Listaposts, setListaPosts] = useState(posts);
+  const [filtroAtivo, setFiltroAtivo] = useState(false);
 
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
@@ -77,6 +90,7 @@ export default function Home({ posts, categorias }) {
     });
 
     setListaPosts(postsFiltrados);
+    
   };
 
   return (
@@ -100,6 +114,8 @@ export default function Home({ posts, categorias }) {
               </button>
             );
           })}
+          { filtroAtivo &&
+          <button className="limpar">Limpar Filtro</button>}
         </StyledCategorias>
 
         <ListaPosts noticia={Listaposts} />
