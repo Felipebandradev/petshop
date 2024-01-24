@@ -1,5 +1,15 @@
 # PetShop: Projeto Next.js
 
+## Branch 14-usando-rotas-dinamicas-para-abrir-post
+
+### Recursos necessários
+
+- Pages/Rotas **dinâmicas** utilizando subpasta (post) e arquivo nomeado com **colchetes** indicando nome(s) do(s) parâmetros. No caso, foi criado o `[id].jsx`
+
+- `getStaticProps`: necessário para carregar  os dados da Api de acordo com o parâmetro (usando a prop `{params}`) e gerar o HTML via SSR.
+
+- `getStaticPaths`: necessário para gerar os caminhos dinâmicos no momento do acesso à página.
+
 ### Documentação oficial sobre SSR:
 https://nextjs.org/docs/pages/building-your-application/data-fetching
 
