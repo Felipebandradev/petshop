@@ -14,10 +14,11 @@ const StyledCategorias = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  
   margin: var(--borda-arredondada) 1rem;
-
+  
   button {
+    text-transform: capitalize;
     margin: var(--borda-arredondada);
     padding: 0.5rem;
 
@@ -68,7 +69,7 @@ export default function Home({ posts, categorias }) {
   const [Listaposts, setListaPosts] = useState(posts);
 
   const filtrar = (event) => {
-    const categoriaEscolhida = event.currentTarget.innerText;
+    const categoriaEscolhida = event.currentTarget.textContent;
     console.log(categoriaEscolhida);
 
     const postsFiltrados = posts.filter((post) => {
