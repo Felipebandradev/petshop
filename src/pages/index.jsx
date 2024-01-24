@@ -24,7 +24,7 @@ export async function getStaticProps() {
       throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
     }
 
-     /* Após o processamento (desde que não haja erros), a getStaticProps
+    /* Após o processamento (desde que não haja erros), a getStaticProps
     retorna um objeto com uma propriedade chamada "props", e nesta propriedade
     colocamos um objeto com as props que queremos usar. No caso, usamos
     uma prop "posts" (pode ter qualquer nome) e é nela que colocamos os dados. */
@@ -35,6 +35,9 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.error("Deu ruim: " + error.message);
+    return {
+      notFound: true,
+    };
   }
 }
 
