@@ -9,6 +9,17 @@ const StyledPost = styled.article`
   h2::before {
     content: "📑 ";
   }
+
+  div > a {
+    text-decoration: none;
+    background-color: var(--cor-primaria-fundo);
+    color: var(--cor-primaria);
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-arredondada);
+    &:hover {
+      background-color: var(--cor-primaria-fundo-hover);
+    }
+  }
 `;
 
 export async function getStaticProps({ params }) {
