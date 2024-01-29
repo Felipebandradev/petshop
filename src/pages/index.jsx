@@ -30,8 +30,13 @@ const StyledCategorias = styled.div`
 
     font-size: 0.9rem;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #bb9df2;
+    }
+
+    &.ativo {
+      background-color: #8248fd;
     }
   }
 
@@ -80,6 +85,7 @@ export async function getStaticProps() {
 export default function Home({ posts, categorias }) {
   const [Listaposts, setListaPosts] = useState(posts);
   const [filtroAtivo, setFiltroAtivo] = useState(false);
+  const [categoriaAtiva, setCategoriaAtiva] = useState("");
 
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
@@ -91,13 +97,16 @@ export default function Home({ posts, categorias }) {
 
     setListaPosts(postsFiltrados);
     setFiltroAtivo(true);
-    
+
+    /* Sinalizando State com texto/Categoria escolhoida */
+    setCategoriaAtiva(categoriaEscolhida);
   };
 
-  const limparFiltro = ()=> {
+  const limparFiltro = () => {
     setListaPosts(posts);
     setFiltroAtivo(false);
-  }
+    setCategoriaAtiva("");
+  };
 
   return (
     <>
@@ -115,13 +124,20 @@ export default function Home({ posts, categorias }) {
         <StyledCategorias>
           {categorias.map((categoria, indice) => {
             return (
-              <button key={indice} onClick={filtrar}>
+              <button
+                className={categoria === categoriaAtiva ? "ativo" : ""}
+                key={indice}
+                onClick={filtrar}
+              >
                 {categoria}
               </button>
             );
           })}
-          { filtroAtivo &&
-          <button onClick={limparFiltro} className="limpar">Limpar Filtro</button>}
+          {filtroAtivo && (
+            <button onClick={limparFiltro} className="limpar">
+              Limpar Filtro
+            </button>
+          )}
         </StyledCategorias>
 
         <ListaPosts noticia={Listaposts} />
