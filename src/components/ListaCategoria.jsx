@@ -44,7 +44,13 @@ const StyledCategorias = styled.div`
   }
 `;
 
-export default function ListaCategoria({categoria, catAtiva, limpaFiltro, filtro, filtroAtivo}) {
+export default function ListaCategoria({
+  categoria,
+  catAtiva,
+  onlimpaFiltro,
+  onfiltro,
+  filtroAtivo,
+}) {
   return (
     <StyledCategorias>
       {categoria.map((categoria, indice) => {
@@ -52,14 +58,14 @@ export default function ListaCategoria({categoria, catAtiva, limpaFiltro, filtro
           <button
             className={categoria === catAtiva ? "ativo" : ""}
             key={indice}
-            onClick={filtro}
+            onClick={onfiltro}
           >
             {categoria}
           </button>
         );
       })}
       {filtroAtivo && (
-        <button onClick={limpaFiltro} className="limpar">
+        <button onClick={onlimpaFiltro} className="limpar">
           Limpar Filtro
         </button>
       )}
