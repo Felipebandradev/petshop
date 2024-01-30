@@ -6,6 +6,12 @@
 
 ## Branch 19-migração-api-fakepara-firebase-json
 
+### Ajustes necessarios para aplicação usar a API Firebase JSON
+
+- Em `index.jsx`, Alterar a getStaticProps ajustando o endpoint para `posts.json` e gerando do um novo array com os posts/objetos carre gados a partir de `CONST dados`
+
+- Em `[id].jsx`, Alterar a getStaticProps ajustando o endpoint para `posts/id.jsx`
+
 ### Para testar a API
 
 - usar a extensão ThunderClient
