@@ -1,7 +1,18 @@
 # PetShop: Projeto Next.js
 
 ## Url
+
 - https://petshop-felipebarbosa2024-default-rtdb.firebaseio.com/
+
+## Branch 19-migração-api-fakepara-firebase-json
+
+### Firebase https://firebase.google.com/?hl=pt
+
+Firebase é uma plataforma de serviços web (Web Services), com uma serie de funcionalidades de back-end uteis para aplicações (web, apps, jogos).
+
+no caso de PetShop Criamos um projeto Firebase e nele adicionamos um banco de dados chamado "Firebase Realtime Database" para utilização como API JSON
+
+O Realtime Database é um banco de dados `NoSQL`, ou seja, um banco de dados **Não Relacional**. Ele é baseado em documentos no formato JSON contendo objetos de dados
 
 ## Branch 14-usando-rotas-dinamicas-para-abrir-post
 
@@ -9,21 +20,21 @@
 
 - Pages/Rotas **dinâmicas** utilizando subpasta (post) e arquivo nomeado com **colchetes** indicando nome(s) do(s) parâmetros. No caso, foi criado o `[id].jsx`
 
-- `getStaticProps`: necessário para carregar  os dados da Api de acordo com o parâmetro (usando a prop `{params}`) e gerar o HTML via SSR.
+- `getStaticProps`: necessário para carregar os dados da Api de acordo com o parâmetro (usando a prop `{params}`) e gerar o HTML via SSR.
 
 - `getStaticPaths`: necessário para gerar os caminhos dinâmicos no momento do acesso à página.
 
 ### Documentação oficial sobre SSR:
+
 https://nextjs.org/docs/pages/building-your-application/data-fetching
 
-### Resumo sobre as funções 
+### Resumo sobre as funções
+
 `getStaticProps`: executada no lado do servidor (SSR - Server Side Rendering), portanto logs, erros, lógica, ação/comandos NÃO aparecem para o usuário (mas aparecem no terminal para o programador(a)).
 
 Na maioria dos casos usaremos `getStaticProps` para este tipo de processamento em que os dados são consumidos (Data Fetching) através da uma API, que já que esta função tem uma perfomance melhor para fazer o processamento apenas no momento da requisição.
 
 Também há a função `getServerSideProps` que pode ser útil para páginas cujos dados mudam frequentemente ou são diferentes para cada usuário (como no caso de uso de dados de geolocalização).
-
-
 
 ## 12-desafio-consumindo-dados-usando-modo-React
 
