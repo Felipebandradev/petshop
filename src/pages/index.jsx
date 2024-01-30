@@ -13,22 +13,32 @@ const StyledHome = styled.section`
 
 export async function getStaticProps() {
   try {
-    const resposta = await fetch(`${serverApi}/posts`);
+    const resposta = await fetch(`${serverApi}/posts.json`);
+
     const dados = await resposta.json();
 
     if (!resposta.ok) {
       throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
     }
 
+    /* Colocando os dados dos objetos dentro de um array */
+    const arrayDePosts = Object.keys(dados).map((post) => {
+      return {
+        ...dados[post],
+        id: post,
+      };
+    });
+    console.log(arrayDePosts);
+
     /* Extraindo as categorias dos posts */
 
-    const categorias = dados.map((post) => post.categoria);
+    const categorias = arrayDePosts.map((post) => post.categoria);
     /* Gerando um array de categorias unicas */
     const categoriasUnicas = [...new Set(categorias)];
 
     return {
       props: {
-        posts: dados,
+        posts: arrayDePosts,
         categorias: categoriasUnicas, // [] provisório
       },
     };
