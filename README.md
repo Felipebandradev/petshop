@@ -11,6 +11,16 @@
 - usar a extensão ThunderClient
 - o icone é um raio roxo
 
+### Lembrete sobre uso de Apis
+
+Como set trata de uma API JSON, podemos utilizamos qualquer um do verbos HTTP para o consumo de APIs no padrâo REST:
+
+- GET: ler, obter dados
+- POST: Criar, inserir
+- PUT: atualizar tudo
+- PATCH: atualizar parcialmente
+- DELETE: excluir
+
 ### Firebase https://firebase.google.com/?hl=pt
 
 Firebase é uma plataforma de serviços web (Web Services), com uma serie de funcionalidades de back-end uteis para aplicações (web, apps, jogos).
