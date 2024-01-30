@@ -6,6 +6,11 @@
 
 ## Branch 19-migração-api-fakepara-firebase-json
 
+### Para testar a API
+
+- usar a extensão ThunderClient
+- o icone é um raio roxo
+
 ### Firebase https://firebase.google.com/?hl=pt
 
 Firebase é uma plataforma de serviços web (Web Services), com uma serie de funcionalidades de back-end uteis para aplicações (web, apps, jogos).
