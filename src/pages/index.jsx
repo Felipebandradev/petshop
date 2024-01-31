@@ -51,7 +51,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts, categorias }) {
-  const [Listaposts, setListaPosts] = useState(posts);
+  const [ListaDeposts, setListaDePosts] = useState(posts);
   const [filtroAtivo, setFiltroAtivo] = useState(false);
   const [categoriaAtiva, setCategoriaAtiva] = useState("");
 
@@ -63,7 +63,7 @@ export default function Home({ posts, categorias }) {
       return post.categoria === categoriaEscolhida;
     });
 
-    setListaPosts(postsFiltrados);
+    setListaDePosts(postsFiltrados);
     setFiltroAtivo(true);
 
     /* Sinalizando State com texto/Categoria escolhoida */
@@ -71,7 +71,7 @@ export default function Home({ posts, categorias }) {
   };
 
   const limparFiltro = () => {
-    setListaPosts(posts);
+    setListaDePosts(posts);
     setFiltroAtivo(false);
     setCategoriaAtiva("");
   };
@@ -87,7 +87,7 @@ export default function Home({ posts, categorias }) {
         />
       </Head>
       <StyledHome>
-        <h2>Pet Notícias</h2>
+        <h2>Pet Notícias: {ListaDeposts.length}</h2>
 
         <ListaCategoria
           categoria={categorias}
@@ -97,7 +97,7 @@ export default function Home({ posts, categorias }) {
           filtroAtivo={filtroAtivo}
         />
 
-        <ListaPosts noticia={Listaposts} />
+        <ListaPosts noticia={ListaDeposts} />
       </StyledHome>
     </>
   );
