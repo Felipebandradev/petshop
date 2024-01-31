@@ -10,39 +10,40 @@ const StyledContato = styled.section`
     content: "💌 ";
   }
 
-  form {
-    & p {
+  form > div {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    /* Seletor + significa "elemento adjacente" ou seja,
+    pegar os paragrafos que estão depois da div */
+
+    & + p {
       font-size: 0.88rem;
       color: #bb1f75;
     }
 
-    & div {
-      margin-bottom: 0.5rem;
+    & label {
+      font-weight: bold;
+      width: 30%;
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+    }
 
-      & label {
-        font-weight: bold;
-        width: 30%;
-        display: flex;
-        align-items: center;
-      }
+    & input,
+    & textarea {
+      width: 70%;
+      border: none;
+      box-shadow: var(--sombra-box);
+      padding: 0.5rem;
+    }
 
-      & input,
-      & textarea {
-        width: 70%;
-        border: none;
-        box-shadow: var(--sombra-box);
-        padding: 0.5rem;
-      }
-
-      & button {
-        background-color: var(--cor-primaria-fundo);
-        color: var(--cor-primaria);
-        padding: 1rem;
-        border: none;
-        cursor: pointer;
-      }
+    & button {
+      background-color: var(--cor-primaria-fundo);
+      color: var(--cor-primaria);
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
     }
   }
 `;
