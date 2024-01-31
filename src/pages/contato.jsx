@@ -10,32 +10,39 @@ const StyledContato = styled.section`
     content: "💌 ";
   }
 
-  form > div {
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: space-between;
+  form {
+    & p {
+      font-size: 0.88rem;
+      color: red;
+    }
 
-    & label {
-      font-weight: bold;
-      width: 30%;
+    & div {
+      margin-bottom: 0.5rem;
       display: flex;
-      align-items: center;
-    }
+      justify-content: space-between;
 
-    & input,
-    & textarea {
-      width: 70%;
-      border: none;
-      box-shadow: var(--sombra-box);
-      padding: 0.5rem;
-    }
+      & label {
+        font-weight: bold;
+        width: 30%;
+        display: flex;
+        align-items: center;
+      }
 
-    & button {
-      background-color: var(--cor-primaria-fundo);
-      color: var(--cor-primaria);
-      padding: 1rem;
-      border: none;
-      cursor: pointer;
+      & input,
+      & textarea {
+        width: 70%;
+        border: none;
+        box-shadow: var(--sombra-box);
+        padding: 0.5rem;
+      }
+
+      & button {
+        background-color: var(--cor-primaria-fundo);
+        color: var(--cor-primaria);
+        padding: 1rem;
+        border: none;
+        cursor: pointer;
+      }
     }
   }
 `;
@@ -78,6 +85,7 @@ export default function Contato() {
 
         <Container>
           <form
+            autoComplete="off"
             action=""
             method="post"
             onSubmit={handleSubmit((dados) => {
@@ -87,38 +95,53 @@ export default function Contato() {
             <div>
               <label htmlFor="nome">Nome:</label>
               <input
-                {...register("nome")}
+                {...register("nome", { required: true })}
                 type="text"
                 name="nome"
                 id="nome"
-                required
               />
             </div>
+            {/* o ? é conhecido por "Optional Chaining[encadeamento opcional]" É usado para evitar erros caso uma propriedade de um objeto seja null ou undefined. Caso não seja null/undefined aí seim verificamos se o type é required para seguir com a validação  */}
+            {errors.nome?.type === "required" && (
+              <p>você deve digitar o nome</p>
+            )}
+
             <div>
               <label htmlFor="email">E-mail:</label>
               <input
-                {...register("email")}
+                {...register("email", { required: true })}
                 type="email"
                 name="email"
                 id="email"
-                required
               />
             </div>
+
+            {errors.email?.type === "required" && (
+              <p>você deve digitar o email</p>
+            )}
 
             <div>
               <label htmlFor="menssagem">
                 Menssagem: <br />
               </label>
               <textarea
-                {...register("mensagem")}
+                {...register("mensagem", { required: true, minLength: 20 })}
                 name="mensagem"
                 id="mensagem"
                 maxLength={500}
                 cols="30"
                 rows="10"
-                required
               ></textarea>
             </div>
+
+            {errors.mensagem?.type === "required" && (
+              <p> você deve digitar uma menssagem</p>
+            )}
+
+            {errors.mensagem?.type === "minLength" && (
+              <p>sua mesagem deve tar pelo menos 20 caracteres</p>
+            )}
+
             <div>
               <button type="submit">Enviar menssagem</button>
             </div>
