@@ -10,7 +10,7 @@
 
 Arquivo chamado `manifest.json` com informações gerais sobre o aplicativo: nome, descrição, ícones, cores etc.
 
-No caso do Next.js, este arquivo deve ser colocado na pasta `publica` e adicionado via `meta tag` na página `_document.js`.
+No caso do Next.js, este arquivo deve ser colocado na pasta `publica` e adicionado via `Link` na página `_document.js` dentro do `<Head>`.
 
 2. Criar/Configurar um Service Worker (JavaScript)
 
