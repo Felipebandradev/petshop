@@ -1,0 +1,19 @@
+{
+    "short_name": "PetShop Felipe",
+    "name": "PetShop top demais",
+    "description": "Exemplo de um PWA criada com Next.js",
+    "icons": [
+      {
+        "src": "images/favicon.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }
+    ],
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "orientation": "any",
+    "lang": "pt-br"
+  }
