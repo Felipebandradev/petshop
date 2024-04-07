@@ -21,7 +21,7 @@ No caso do Next.js, este arquivo deve ser colocado na pasta `publica` e adiciona
 
 ## Url
 
-- https://petshop-felipebarbosa2024-default-rtdb.firebaseio.com/
+- https://petshop-felipe-barbosa.vercel.app/
 
 ## Branch 19-migração-api-fakepara-firebase-json
 
